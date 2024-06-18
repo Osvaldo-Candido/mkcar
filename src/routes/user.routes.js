@@ -8,4 +8,4 @@ UserRoutes.get('/', userController.index);
 UserRoutes.post('/create', userController.create);
 UserRoutes.put('/update/:id', userController.update);
 
-module.exports = UserRoutes;
+module.exports = UserRoutes;  

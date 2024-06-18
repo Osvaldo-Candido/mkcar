@@ -28,6 +28,18 @@ class SessionController {
 
     return response.json({ token, user });
   }
+
+  async index(request, response) {
+    const id = request.user.id;
+
+    const user = await knex('users').where({ id }).first();
+
+    if (!user) {
+      throw new AppError('Usuário inválido', 401);
+    }
+
+    return response.json({ user });
+  }
 }
 
 module.exports = SessionController;
